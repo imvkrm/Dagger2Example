@@ -7,8 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-abstract class WheelsModule {
-//abstract becoz we don'' need implementation of any of below methods so these methods can be of static type
+ class WheelsModule {
 
     @Provides
     fun provideRims(): Rims {
