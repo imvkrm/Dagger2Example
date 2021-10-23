@@ -4,7 +4,7 @@ import android.util.Log
 import javax.inject.Inject
 
 //Constructor Injection
-class Car @Inject constructor(private val wheels: Wheels) {
+class Car @Inject constructor(private val engine: Engine,private val wheels: Wheels) {
 
     private val TAG = "Car"
     //Field Injection
@@ -19,6 +19,7 @@ class Car @Inject constructor(private val wheels: Wheels) {
     }
 
     fun drive() {
+        engine.start()
         Log.e(TAG, "driving.....")
     }
 }

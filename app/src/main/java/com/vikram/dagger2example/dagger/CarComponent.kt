@@ -5,8 +5,8 @@ import com.vikram.dagger2example.car.Car
 import dagger.Component
 
 //this is our excess point
-@Component (modules = [WheelsModule::class, PetrolEngineModule::class/*,DieselEngineModule::class*/])
-// We can't use both engine module because it would difficult to choose btw them
+@Component (modules = [WheelsModule::class, /*PetrolEngineModule::class,*/DieselEngineModule::class])
+// /*Pet..*/ We can't use both engine module because it would difficult to choose btw them
 interface CarComponent {
     val getCar: Car
 

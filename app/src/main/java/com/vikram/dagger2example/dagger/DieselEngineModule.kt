@@ -2,15 +2,20 @@ package com.vikram.dagger2example.dagger
 
 import com.vikram.dagger2example.car.DieselEngine
 import com.vikram.dagger2example.car.Engine
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class DieselEngineModule {
-     //More efficient than provider
-    //Binds is used here instead of Provider becoz we don't need any implementation
-    // Also while using when interface its a good practice to use Binds
-    @Binds
-    abstract fun bindEngine(dieselEngine: DieselEngine): Engine
+class DieselEngineModule constructor(private val horsePower: Int) {
+
+    @Provides
+    fun provideHorsePower():Int{
+        return horsePower
+    }
+
+    @Provides
+    fun provideEngine(dieselEngine: DieselEngine): Engine {
+        return dieselEngine
+    }
 
 }

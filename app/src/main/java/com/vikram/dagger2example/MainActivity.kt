@@ -3,6 +3,8 @@ package com.vikram.dagger2example
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.vikram.dagger2example.car.Car
+import com.vikram.dagger2example.dagger.DaggerCarComponent
+import com.vikram.dagger2example.dagger.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val carComponent=DaggerCarComponent.create()
+        val carComponent= DaggerCarComponent.builder().dieselEngineModule(DieselEngineModule(123)).build()
        // car=carComponent.getCar  //Constructor Injection
         carComponent.injection(this)  //Field Injection
 
