@@ -1,9 +1,11 @@
 package com.vikram.dagger2example.car
 
 import android.util.Log
+import com.vikram.dagger2example.dagger.PerActivity
 import javax.inject.Inject
 
 //Constructor Injection
+@PerActivity
 class Car @Inject constructor(private val engine: Engine,private val wheels: Wheels,private val driver: Driver) {
 
     private val TAG = "Car"
