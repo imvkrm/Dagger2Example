@@ -8,7 +8,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
 //This is called Factory Method
-    fun getActivitySubComponent(dieselEngineModule: DieselEngineModule): ActivitySubComponent
+    fun getActivitySubComponentBuilder(): ActivitySubComponent.Builder
 //pass DieselEngineModule as argument as it's not an abstract class
 
 }
