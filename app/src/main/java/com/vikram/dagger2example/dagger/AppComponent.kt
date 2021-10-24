@@ -1,11 +1,14 @@
 package com.vikram.dagger2example.dagger
 
-import com.vikram.dagger2example.car.Driver
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [DriverModule::class])
 interface AppComponent {
-    fun getDriver():Driver
+
+//This is called Factory Method
+    fun getActivitySubComponent(dieselEngineModule: DieselEngineModule): ActivitySubComponent
+//pass DieselEngineModule as argument as it's not an abstract class
+
 }
