@@ -4,6 +4,6 @@ package com.vikram.dagger2example.car
 //Singleton becoz one driver can drive multiple cars*/
 
 
-class Driver /*@Inject constructor()*/ {
+class Driver  constructor(val name:String) {
     //Assuming -We don't own this class so we cann'' annotate it with @Inject
 }

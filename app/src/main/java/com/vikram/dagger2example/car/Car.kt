@@ -22,6 +22,6 @@ class Car @Inject constructor(private val engine: Engine,private val wheels: Whe
 
     fun drive() {
         engine.start()
-        Log.e(TAG, "$driver drives $this")
+        Log.e(TAG, "$driver ${driver.name} drives $this")
     }
 }

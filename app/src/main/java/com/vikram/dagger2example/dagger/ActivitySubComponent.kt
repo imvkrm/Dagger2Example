@@ -16,7 +16,7 @@ interface ActivitySubComponent {
 
     fun injection(mainActivity: MainActivity)
 
-    @Subcomponent.Builder
+    /*@Subcomponent.Builder
     interface Builder {
         //Assign value run time and can be accessible from anywhere
         @BindsInstance
@@ -28,6 +28,11 @@ interface ActivitySubComponent {
         fun build(): ActivitySubComponent
 
 
-    }
+    }*/
+
+    @Subcomponent.Factory
+     interface Factory{
+         fun create(@BindsInstance @Named("horse power") horsePower: Int,@BindsInstance @Named("engine capacity") engineCapacity: Int):ActivitySubComponent
+     }
 
 }

@@ -8,7 +8,12 @@ import javax.inject.Singleton
 interface AppComponent {
 
 //This is called Factory Method
-    fun getActivitySubComponentBuilder(): ActivitySubComponent.Builder
+    fun getActivitySubComponentFactory(): ActivitySubComponent.Factory
 //pass DieselEngineModule as argument as it's not an abstract class
+
+    @Component.Factory
+    interface Factory{
+        fun create(driverModule: DriverModule):AppComponent
+    }
 
 }

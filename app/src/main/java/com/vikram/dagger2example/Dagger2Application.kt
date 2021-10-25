@@ -3,6 +3,7 @@ package com.vikram.dagger2example
 import android.app.Application
 import com.vikram.dagger2example.dagger.AppComponent
 import com.vikram.dagger2example.dagger.DaggerAppComponent
+import com.vikram.dagger2example.dagger.DriverModule
 
 class Dagger2Application : Application() {
 
@@ -22,7 +23,7 @@ private lateinit var appComponent: AppComponent
             .build()*/
 
 
-        appComponent =DaggerAppComponent.create()
+       appComponent =DaggerAppComponent.factory().create(DriverModule("Hasan"))
     }
 
 

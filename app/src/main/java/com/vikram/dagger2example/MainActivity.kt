@@ -45,9 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         val activitySubComponent =
             (applicationContext as Dagger2Application).getAppComponentInstance()
-                .getActivitySubComponentBuilder().engineCapacity(1400)
-                .horsePower(140)
-                .build()
+                .getActivitySubComponentFactory().create(1400,150)
 
 
         activitySubComponent.injection(this)
